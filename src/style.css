@@ -1,0 +1,54 @@
+@font-face { font-family: Fancy; src: url('LuxuriousScript-Regular.ttf'); }
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20vh fit-content 10vh;
+    justify-items: stretch;
+}
+
+
+#content>h3{
+    font-family: "Fancy";
+    font-size: 60px;
+}
+
+header>nav{
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    padding: 1em;
+    padding-top: 2em ;
+
+}
+nav{
+    background-color: yellow;
+}
+
+header>nav>button{
+    width: 6em;
+}
+
+#content{
+    display: grid;
+    background-color: blue;
+    padding: 3em;
+    text-align: center;
+    
+}
+
+#footer{
+
+    left: 50%;
+    bottom:0;
+    padding: 1.5em;
+    color: white;
+    background-color: black;
+
+}
