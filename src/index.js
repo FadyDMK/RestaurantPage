@@ -1,28 +1,45 @@
 import "./style.css";
-import Image from "./fennec5.jpeg";
 
-function home() {
-  const content = document.getElementById("content");
-  const title = document.createElement("h3");
-  const image = document.createElement("img");
-  title.textContent = "Fennec";
-  image.src = Image;
-  image.alt = "fennec";
+import about from "./about";
+import home from "./home";
+import menu from "./menu";
 
-  content.appendChild(title);
-  content.appendChild(image);
-}
+const homeBtn = document.getElementById("home-btn");
+const menuBtn = document.getElementById("menu-btn");
+const aboutBtn = document.getElementById("about-btn");
 
-function main() {
-  const wrapper = document.createElement('div');
-  wrapper.className = "wrapper";
+homeBtn.classList.add("active");
 
-  const header = document.createElement('header');
+homeBtn.addEventListener("click", () => {
+  homeBtn.classList.add("active");
+  menuBtn.classList.remove("active");
+  aboutBtn.classList.remove("active");
 
-  const buttons = ['Home','Menu','About']
+  clearPage();
+  home();
+});
 
+menuBtn.addEventListener("click", () => {
+  homeBtn.classList.remove("active");
+  menuBtn.classList.add("active");
+  aboutBtn.classList.remove("active");
+  clearPage();
+  menu();
+});
 
-  wrapper.appendChild(header)
+aboutBtn.addEventListener("click", () => {
+  homeBtn.classList.remove("active");
+  menuBtn.classList.remove("active");
+  aboutBtn.classList.add("active");
+  clearPage();
+  about();
+});
+
+function clearPage() {
+  const cnt = document.getElementById("content");
+  while (cnt.firstChild) {
+    cnt.removeChild(cnt.firstChild);
+  }
 }
 
 document.body.appendChild(home());

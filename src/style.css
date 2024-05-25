@@ -1,128 +1,148 @@
 @font-face {
-    font-family: Fancy;
-    src: url('LuxuriousScript-Regular.ttf');
+  font-family: Fancy;
+  src: url("LuxuriousScript-Regular.ttf");
 }
 
-
-
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    background-color: #d0f5ff;
+  background-color: #d0f5ff;
 }
 
 .wrapper {
-    display: grid;
-    grid-template-columns: 100vw;
-    grid-template-rows: 20vh stretch 10vh;
-    justify-items: stretch;
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 20vh stretch 10vh;
+  justify-items: stretch;
 }
-
-
-
-
 
 /*Content*/
 #content {
-    display: grid;
-    background-color: #f0fbff;
-    padding: 2em;
-    text-align: center;
-    position: relative;
-    text-align: center;
-
+  display: grid;
+  background-color: #f0fbff;
+  padding: 2em;
+  text-align: center;
+  position: relative;
+  text-align: center;
 }
 
-#content>h3 {
-    font-family: "Fancy";
-    color: #003255;
-    font-size: 6em;
-    position: absolute;
-    top: 47%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#content > h3 {
+  font-family: "Fancy";
+  color: #003255;
+  font-size: 6em;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-
-#content>img {
-
-    width: 100%;
-    height: 70vh;
-
-    border-radius: 20px;
+#content > img {
+  width: 100%;
+  height: 70vh;
+  border-radius: 20px;
 }
 
+/*Content: Menu*/
 
+.menu {
+  display: grid !important;
 
+  grid-template-columns: repeat(auto-fill, minmax(300px, 60vh));
+
+  gap: 30px;
+  padding: 20px;
+
+  justify-content: center;
+}
+.menu-item {
+  padding: 10px;
+  overflow: hidden;
+  background-color: #e6f4f1;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+.menu-item:hover {
+  transform: scale(1.1);
+  -webkit-box-shadow: 7px -7px 24px 11px rgba(208, 245, 255, 1);
+  -moz-box-shadow: 7px -7px 24px 11px rgba(208, 245, 255, 1);
+  box-shadow: 7px -7px 24px 11px rgba(208, 245, 255, 1);
+}
+
+.menu-item > .dishPic {
+  max-width: 100%;
+  max-height: 50%;
+  object-fit: cover;
+  border-radius: 10px;
+  align-self: center;
+}
 
 /* header */
-header>nav {
-    display: flex;
-    justify-content: center;
-    gap: 3em;
-    padding: 0.5em;
-    padding-top: 1em;
-
+header > nav {
+  display: flex;
+  justify-content: center;
+  gap: 3em;
+  padding: 0.5em;
+  padding-top: 1em;
 }
 
 nav {
-    background-color: #f0fbff;
+  background-color: #f0fbff;
 }
 
-header>nav>button {
-    font-family: FontAwesome;
-    width: 6em;
-    background-color: #f0fbff;
-    border: none;
-    font-size: 1.3em;
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
+header > nav > button {
+  font-family: FontAwesome;
+  width: 6em;
+  background-color: #f0fbff;
+  border: none;
+  font-size: 1.3em;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
 }
 
+/*Buttons*/
 
-header>nav>button::after {
-    cursor: pointer;
+header > nav > button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #80bbe7;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
-header>nav>button::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #80bbe7;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+header > nav > button:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
-header>nav>button:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+.active{
+  border-bottom: #80bbe7 solid 2px;
 }
-
-
 
 
 
 /*Footer*/
 #footer {
-
-    bottom: 0;
-    width: 100vw;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    color: #a5a4a4;
-    background-color: #f0fbff;
-    text-align: center;
-
+  bottom: 0;
+  width: 100vw;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #a5a4a4;
+  background-color: #f0fbff;
+  text-align: center;
 }
 
-#footer>a {
-    color: #a5a4a4;
+#footer > a {
+  color: #a5a4a4;
 }
